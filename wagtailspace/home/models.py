@@ -164,6 +164,7 @@ class HomePage(Page):
     signup_content = RichTextField(blank=True)
     signup_button_title = models.CharField(blank=True, max_length=100)
 
+    show_attendees = models.BooleanField(default=True)
     attendees_title = models.CharField(blank=True, max_length=255)
     attendees_content = RichTextField(blank=True)
 
@@ -223,6 +224,7 @@ class HomePage(Page):
         ),
         MultiFieldPanel(
             [
+                FieldPanel('show_attendees'),
                 FieldPanel('attendees_title'),
                 FieldPanel('attendees_content'),
             ],

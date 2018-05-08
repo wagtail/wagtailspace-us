@@ -123,6 +123,7 @@
                 </p>
     </section>
 
+    {% if self.show_attendees %}
     <section class="chapter">
         <h2>{{ self.attendees_title }}</h2>
         {% if self.attendees_content %}
@@ -156,6 +157,7 @@
         </table>
         </div>
     </section>
+    {% endif %}
 
     <section class="chapter">
         <h2>{{ self.sponsors_title }}</h2>
