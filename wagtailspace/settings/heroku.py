@@ -45,6 +45,9 @@ if 'CACHE_PURGE_URL' in env:
         },
     }
 
+# Enforce HTTPS
+SECURE_SSL_REDIRECT = True
+
 # Logging
 
 LOGGING = {
