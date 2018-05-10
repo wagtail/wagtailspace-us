@@ -130,3 +130,12 @@ WEBPACK_LOADER = {
 }
 
 CRISPY_TEMPLATE_PACK = 'bootstrap4'
+
+WAGTAILSPACE_REGISTRATION_NOTIFICATIONS = [
+    email for email in os.environ.get(
+        'WAGTAILSPACE_REGISTRATION_NOTIFICATIONS',
+        ''
+    ).split(
+        ','
+    ) if email
+]
