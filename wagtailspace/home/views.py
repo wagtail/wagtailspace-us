@@ -1,8 +1,10 @@
+from django.conf import settings
 from django.core.exceptions import PermissionDenied
+from django.core.mail import send_mail
 from django.shortcuts import render
+
 from wagtailspace.home.forms import SignupForm
 from wagtailspace.home.models import HomePage, EventDate
-from django.core.mail import send_mail
 
 path_to_icons = 'images/favicons'
 
@@ -105,7 +107,7 @@ Wagtail Space Registration System
         'New Wagtail Space Registration',
         message,
         'Wagtail Space <no-reply@wagtail.space>',
-        ['support@fourdigits.nl'],
+        settings.WAGTAILSPACE_REGISTRATION_NOTIFICATIONS,
         fail_silently=False,
     )
 

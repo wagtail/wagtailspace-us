@@ -130,3 +130,8 @@ WEBPACK_LOADER = {
 }
 
 CRISPY_TEMPLATE_PACK = 'bootstrap4'
+
+WAGTAILSPACE_REGISTRATION_NOTIFICATIONS = [
+    'tim@pyphilly.org',
+    'tom.dyson@torchbox.com',
+]
