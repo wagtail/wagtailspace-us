@@ -98,7 +98,6 @@ Wagtail Space Registration System
         dates=dates,
         food_allergies=registration.food_allergies,
         roles=roles,
-        shirt_size=registration.shirt_size,
         talk=talk,
         talk_title=registration.talk_title,
         comments=registration.comments

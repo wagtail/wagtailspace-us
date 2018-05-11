@@ -45,7 +45,6 @@ class RegistrationModelAdmin(ModelAdmin):
         # 'dates',
         # 'food_allergies',
         # 'roles',
-        'shirt_size',
         'give_a_talk',
         'talk_title',
         # 'comments',
