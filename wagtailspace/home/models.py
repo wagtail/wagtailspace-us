@@ -163,6 +163,7 @@ class HomePage(Page):
     signup_title = models.CharField(blank=True, max_length=255)
     signup_content = RichTextField(blank=True)
     signup_button_title = models.CharField(blank=True, max_length=100)
+    signup_open = models.BooleanField(default=True)
 
     show_attendees = models.BooleanField(default=True)
     attendees_title = models.CharField(blank=True, max_length=255)
@@ -219,6 +220,7 @@ class HomePage(Page):
                 FieldPanel('signup_title'),
                 FieldPanel('signup_content'),
                 FieldPanel('signup_button_title'),
+                FieldPanel('signup_open'),
             ],
             heading='Signup'
         ),
