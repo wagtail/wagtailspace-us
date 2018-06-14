@@ -15,6 +15,7 @@ What we propose:
     - Provide hosting yourself (supply an ip address)
     - Notify Wagtail Core team of your event plans
 
+[![Deploy](https://www.herokucdn.com/deploy/button.png)](https://heroku.com/deploy)
 
 Install
 -------

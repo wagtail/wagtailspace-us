@@ -1,0 +1,16 @@
+{
+  "name": "Wagtail Space",
+  "description": "A Wagtail site for hosting a Wagtail Space event.",
+  "website": "http://wagtail.space",
+  "buildpacks": [
+    {"url": "heroku/python"},
+    {"url": "heroku/nodejs"}
+  ],
+  "addons": ["heroku-postgresql:hobby-dev", "sendgrid:starter"],
+  "env": {
+    "SECRET_KEY": {
+      "description": "The secret key for the Django application.",
+      "generator": "secret"
+    }
+  }
+}
