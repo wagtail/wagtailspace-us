@@ -364,6 +364,6 @@ class Registration(models.Model):
     dates = models.ManyToManyField('EventDate')
     food_allergies = models.CharField('Dietary requirements', max_length=255, blank=True)
     roles = models.ManyToManyField('ExperienceOption')
-    give_a_talk = models.BooleanField('I would like to give a talk on Friday', default=False)
+    give_a_talk = models.BooleanField('I would like to give a talk', default=False)
     talk_title = models.CharField('Talk subject', max_length=1000, blank=True)
     comments = models.TextField('Comments', blank=True)
