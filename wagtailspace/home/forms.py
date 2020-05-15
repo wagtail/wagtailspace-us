@@ -13,7 +13,6 @@ class SignupForm(forms.ModelForm):
             'github_nickname',
             'company',
             'dates',
-            'food_allergies',
             'roles',
             'give_a_talk',
             'talk_title',
