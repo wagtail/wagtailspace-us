@@ -32,7 +32,6 @@ class SignupForm(forms.ModelForm):
             Field('github_nickname'),
             Field('company'),
             Field('dates', css_class="dates-attending"),
-            Field('food_allergies'),
             Field('roles'),
             Field('give_a_talk', css_class='give_a_talk'),
             Field('talk_title', css_class='talk_title'),
