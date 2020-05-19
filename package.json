@@ -1,9 +1,8 @@
 {
-  "name": "wagtailspace",
+  "name": "wagtailspace-us",
   "version": "1.0.0",
   "main": "index.js",
-  "repository": "git@bitbucket.org:fourdigits/wagtailspace.git",
-  "author": "Four Digits <info@fourdigits.nl>",
+  "repository": "git@bitbucket.org:wagtail/wagtailspace-us.git",
   "dependencies": {
     "aos": "^2.2.0",
     "bootstrap": "4.0.0-alpha.6",
@@ -45,5 +44,7 @@
     "start": "webpack --watch --config webpack.config.dev.js",
     "build": "webpack -p --config webpack.config.prd.js",
     "heroku-postbuild": "yarn build"
-  }
+  },
+  "engines": {
+    "node": "<9" }
 }

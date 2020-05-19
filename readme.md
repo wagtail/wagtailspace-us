@@ -21,14 +21,14 @@ Install
 
 Clone this repo:
 
-    git clone git@github.com:fourdigits/wagtailspace.git
+    git clone git@github.com:wagtail/wagtailspace-us.git
 
 
 Create an environment and install Python packages:
 
-    virtualenv env -p python3
-    source env/bin/activate
-    pip install -r requirements.txt
+    python3 -m venv .venv/
+    source .venv/bin/activate
+    pip install -r requirements/dev.txt
 
 
 Configure your database. Copy and edit local.py. (secret key and database credentials).
