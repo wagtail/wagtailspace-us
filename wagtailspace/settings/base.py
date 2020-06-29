@@ -13,7 +13,6 @@ INSTALLED_APPS = [
     'webpack_loader',
     'crispy_forms',
     'modelcluster',
-    'compressor',
     'taggit',
     'wagtail.contrib.modeladmin',
     'wagtail.contrib.search_promotions',
@@ -88,7 +87,7 @@ AUTH_PASSWORD_VALIDATORS = [
 
 LANGUAGE_CODE = 'en-us'
 
-TIME_ZONE = 'Europe/Amsterdam'
+TIME_ZONE = 'America/New_York'
 
 USE_I18N = True
 
@@ -99,7 +98,6 @@ USE_TZ = True
 STATICFILES_FINDERS = [
     'django.contrib.staticfiles.finders.FileSystemFinder',
     'django.contrib.staticfiles.finders.AppDirectoriesFinder',
-    'compressor.finders.CompressorFinder',
 ]
 
 STATICFILES_DIRS = [
@@ -111,10 +109,6 @@ STATIC_URL = '/static/'
 
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 MEDIA_URL = '/media/'
-
-COMPRESS_PRECOMPILERS = [
-    ('text/x-scss', 'django_libsass.SassCompiler'),
-]
 
 
 WAGTAIL_SITE_NAME = "Wagtail Space"

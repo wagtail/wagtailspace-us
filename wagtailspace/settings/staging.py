@@ -1,6 +1,8 @@
 """
 This file is configured for hosting on codered.cloud.
 See: https://www.codered.cloud/docs/django/environment/
+
+Identical copy of prod.py, with debug turned off.
 """
 
 import os
@@ -12,8 +14,8 @@ from .base import *
 # Instead, use environment variables or create a local.py file on the server.
 
 # Disable debug mode
-DEBUG = False
-TEMPLATES[0]['OPTIONS']['debug'] = False
+DEBUG = True
+TEMPLATES[0]['OPTIONS']['debug'] = DEBUG
 
 
 # -- Recommended CodeRed Cloud settings ---------------------------------------

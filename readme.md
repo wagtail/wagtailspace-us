@@ -24,7 +24,8 @@ Clone this repo:
     git clone git@github.com:wagtail/wagtailspace-us.git
 
 
-Create an environment and install Python packages:
+Create a Python 3.6 environment and install Python packages (NOTE: dev packages
+will require a C/C++ compiler or Visual Studio on Windows):
 
     python3 -m venv .venv/
     source .venv/bin/activate
@@ -47,7 +48,16 @@ Make migrations, create a user and run the development server:
 Frontend
 --------
 
+Install NodeJS (last tested with version 14). Then install yarn with:
+
+    npm install -g yarn
+
+Install project packages:
+
     yarn
+
+Run the development web server. This should be run in tandem with Django runserver.
+
     yarn start
 
 
@@ -70,3 +80,24 @@ On the server:
 
 
 Restart.
+
+
+Deploying on CodeRed Cloud
+--------------------------
+
+Build the frontend locally:
+
+    git pull origin master
+    yarn build
+
+Copy the code and static assets to the server using SFTP (credentials can be
+accessed through CodeRed dashboard at https://app.codered.cloud/)
+
+    sftp user@host:/www/
+    sftp> put -r requirements/
+    sftp> put -r wagtailspace/
+    sftp> put requirements.txt
+    sftp> put config-prd-stats.json
+
+From the CodeRed Dashboard > Websites > Deployment tab click
+**Redeploy Production** which will reinitialize the runtime with the new code.
