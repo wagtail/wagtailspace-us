@@ -1,1 +1,7 @@
--r requirements/prd.txt
+django-crispy-forms==1.7.*
+django_sendmail_backend==0.1.*
+django-webpack-loader==0.5.*
+Django==2.0.*
+Pillow==5.1.*
+psycopg2==2.8.*
+wagtail==2.0.*

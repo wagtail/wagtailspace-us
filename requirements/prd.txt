@@ -1,3 +1,0 @@
--r base.txt
-
-django_sendmail_backend==0.1.*

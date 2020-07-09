@@ -24,12 +24,11 @@ Clone this repo:
     git clone git@github.com:wagtail/wagtailspace-us.git
 
 
-Create a Python 3.6 environment and install Python packages (NOTE: dev packages
-will require a C/C++ compiler or Visual Studio on Windows):
+Create a Python 3.6 environment and install Python packages:
 
     python3 -m venv .venv/
     source .venv/bin/activate
-    pip install -r requirements/dev.txt
+    pip install -r requirements.txt
 
 
 Configure your database. Copy and edit local.py. (secret key and database credentials).
@@ -61,8 +60,8 @@ Run the development web server. This should be run in tandem with Django runserv
     yarn start
 
 
-Deploy
-------
+Deploying (Generic)
+-------------------
 
 Build the frontend locally and copy the results to the server:
 
@@ -94,10 +93,11 @@ Copy the code and static assets to the server using SFTP (credentials can be
 accessed through CodeRed dashboard at https://app.codered.cloud/)
 
     sftp user@host:/www/
-    sftp> put -r requirements/
     sftp> put -r wagtailspace/
+    sftp> put manage.py
     sftp> put requirements.txt
     sftp> put config-prd-stats.json
 
 From the CodeRed Dashboard > Websites > Deployment tab click
-**Redeploy Production** which will reinitialize the runtime with the new code.
+**Redeploy Production** which will reinitialize the runtime with the new code
+(and automatically runs pip install, collectstatic, migrate, etc.).
