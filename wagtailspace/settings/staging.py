@@ -48,12 +48,14 @@ env = os.environ.copy()
 
 # Basic configuration
 
-BASE_URL = 'http://%s/' % env['VIRTUAL_HOST']
+BASE_URL = 'http://%s' % env['VIRTUAL_HOST']
 
 if 'SERVER_EMAIL' in env:
     SERVER_EMAIL = env['SERVER_EMAIL']
 else:
     SERVER_EMAIL = 'noreply@%s' % env['VIRTUAL_HOST']
+
+DEFAULT_FROM_EMAIL = SERVER_EMAIL
 
 if 'CACHE_PURGE_URL' in env:
     INSTALLED_APPS += ('wagtail.contrib.wagtailfrontendcache', )
