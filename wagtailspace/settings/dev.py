@@ -6,8 +6,6 @@ AUTH_PASSWORD_VALIDATORS = []
 
 INSTALLED_APPS += [
     'wagtail.contrib.styleguide',
-    'debug_toolbar',
-    'django_extensions',
 ]
 
 ALLOWED_HOSTS = ['*']
@@ -28,10 +26,6 @@ LOGGING = {
 
 WEBPACK_LOADER['DEFAULT']['CACHE'] = False
 WEBPACK_LOADER['DEFAULT']['STATS_FILE'] = os.path.join(BASE_DIR, 'config-dev-stats.json')
-
-MIDDLEWARE += [
-    'debug_toolbar.middleware.DebugToolbarMiddleware',
-]
 
 INTERNAL_IPS = '127.0.0.1'
 
