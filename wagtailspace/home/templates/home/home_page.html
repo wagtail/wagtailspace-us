@@ -32,7 +32,7 @@
     </div>
 </header>
 <main>
-    <section class="chapter">
+    <section class="chapter" id="intro">
         <div class="row">
             <div class="col-md-10 offset-md-1">
                 <p class="intro">
@@ -42,7 +42,7 @@
             </div>
     </section>
 
-    <section class="chapter">
+    <section class="chapter" id="speak">
         <div class="ufo--placeholder" style="position: absolute; right: 0; top: -80px;"></div>
         <h2>{{ self.talks_sprint_title }}</h2>
         <div class="row">
@@ -55,7 +55,7 @@
         </div>
     </section>
 
-    <section class="chapter">
+    <section class="chapter" id="schedule">
         <h2>{{ self.schedule_title }}</h2>
         {% if self.schedule_content %}
             <div class="row">
@@ -90,7 +90,7 @@
         </div>
     </section>
 
-    <section class="chapter">
+    <section class="chapter" id="location">
         <h2>{{ self.location_facilities_title }}</h2>
         <div class="row">
             <div class="col-md-6">
@@ -104,7 +104,7 @@
         </div>
     </section>
 
-    <section class="chapter">
+    <section class="chapter" id="travel">
         <h2>{{ self.travel_hotels_title }}</h2>
         <div class="row">
             <div class="col-md-6">
@@ -118,7 +118,7 @@
     </section>
 
     {% if self.signup_open %}
-    <section class="chapter">
+    <section class="chapter" id="register">
         <div class="row">
             <div class="col-md-10">
                 <h2>{{ self.signup_title }}</h2>
@@ -130,7 +130,7 @@
     {% endif %}
 
     {% if self.show_attendees %}
-    <section class="chapter">
+    <section class="chapter" id="attendees">
         <h2>{{ self.attendees_title }}</h2>
         {% if self.attendees_content %}
             <div class="row">
@@ -165,7 +165,7 @@
     </section>
     {% endif %}
 
-    <section class="chapter">
+    <section class="chapter" id="sponsors">
         <h2>{{ self.sponsors_title }}</h2>
         <div class="row">
             <div class="col-md-10">
@@ -174,7 +174,7 @@
         </div>
     </section>
 
-    <section class="chapter">
+    <section class="chapter" id="code-of-conduct">
         <h2>{{ self.house_rules_title }}</h2>
         <div class="row">
             <div class="col-md-10">
