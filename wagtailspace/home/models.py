@@ -8,6 +8,7 @@ from wagtail.admin.edit_handlers import (
     FieldRowPanel,
     InlinePanel,
     MultiFieldPanel,
+    PageChooserPanel,
     StreamFieldPanel
 )
 from wagtail.core import blocks
@@ -163,7 +164,19 @@ class HomePage(Page):
     signup_title = models.CharField(blank=True, max_length=255)
     signup_content = RichTextField(blank=True)
     signup_button_title = models.CharField(blank=True, max_length=100)
-    signup_open = models.BooleanField(default=True)
+    signup_form = models.ForeignKey(
+        "home.FormPage",
+        verbose_name="Signup Form",
+        null=True,
+        blank=True,
+        on_delete=models.SET_NULL,
+        related_name='+',
+    )
+    signup_open = models.BooleanField(
+        verbose_name="Signup open (old hard-coded form)",
+        help_text="Create a Signup Form (Form Page) above instead.",
+        default=False,
+    )
 
     show_attendees = models.BooleanField(default=True)
     attendees_title = models.CharField(blank=True, max_length=255)
@@ -221,6 +234,7 @@ class HomePage(Page):
                 FieldPanel('signup_content'),
                 FieldPanel('signup_button_title'),
                 FieldPanel('signup_open'),
+                PageChooserPanel("signup_form", "home.FormPage"),
             ],
             heading='Signup'
         ),

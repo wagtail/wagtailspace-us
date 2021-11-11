@@ -17,7 +17,9 @@
             <h1 class="header__title">{{ self.title }}</h1>
             <span class="header__subtitle">{{ self.subtitle }}</span>
 
-            {% if self.signup_open %}
+            {% if self.signup_form %}
+            <a class="button" href="{% pageurl self.signup_form %}">Sign up!</a>
+            {% elif self.signup_open %}
             <button class="button signup" data-url="{% url 'signup' %}">Sign up!</button>
             {% endif %}
 
@@ -117,14 +119,18 @@
         </div>
     </section>
 
-    {% if self.signup_open %}
+    {% if self.signup_open or self.signup_form %}
     <section class="chapter" id="register">
         <div class="row">
             <div class="col-md-10">
                 <h2>{{ self.signup_title }}</h2>
                 {{ self.signup_content|richtext }}
                 <p>
+                    {% if self.signup_form %}
+                    <a class="button" href="{% pageurl self.signup_form %}">{{ self.signup_button_title }}</a>
+                    {% elif self.signup_open %}
                     <a href="#" class="button signup" data-url="{% url 'signup' %}">{{ self.signup_button_title }}</a>
+                    {% endif %}
                 </p>
     </section>
     {% endif %}

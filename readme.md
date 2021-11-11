@@ -37,10 +37,19 @@ Configure your database. Copy and edit local.py. (secret key and database creden
     vi wagtailspace/settings/local.py
 
 
-Make migrations, create a user and run the development server:
+Migrate and create a user:
 
     python manage.py migrate
     python manage.py createsuperuser
+
+Build front-end:
+
+    npm install -g yarn
+    yarn
+    yarn build
+
+Runserver:
+
     python manage.py runserver
 
 
@@ -73,7 +82,7 @@ Build the frontend locally and copy the results to the server:
 
 On the server:
 
-    pip install -r requirements/prd.txt
+    pip install -r requirements.txt
     python manage.py collectstatic
     python manage.py migrate
 
@@ -92,11 +101,7 @@ Build the frontend locally:
 Copy the code and static assets to the server using SFTP (credentials can be
 accessed through CodeRed dashboard at https://app.codered.cloud/)
 
-    sftp user@host:/www/
-    sftp> put -r wagtailspace/
-    sftp> put manage.py
-    sftp> put requirements.txt
-    sftp> put config-prd-stats.json
+    cat codered-deploy.txt | sftp wagtailspace-us@wagtailspace-us.codered.cloud
 
 From the CodeRed Dashboard > Websites > Deployment tab click
 **Redeploy Production** which will reinitialize the runtime with the new code
