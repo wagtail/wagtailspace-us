@@ -9,10 +9,16 @@
     {% endif %}
     </div>
     <div class="gray">
-      <div class="container">
-        <div class="col-md-12">
+      <div class="container mt-5">
+        <h1>{{self.title}}</h1>
         {{ self.thank_you_text|richtext }}
-        </div>
       </div>
     </div>
+
+    <footer class="footer">
+      <div class="footer__inner">
+        <div class="fourdigits-flag"></div>
+        <div class="ufo--placeholder" style="position: absolute; top: 50px; left: 100px;"></div>
+      </div>
+    </footer>
 {% endblock %}
