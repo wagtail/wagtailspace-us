@@ -453,3 +453,19 @@ main {
     font-weight: 600;
   }
 }
+
+.form-page {
+    font-size: 18px;
+
+    form {
+        display: inline-block;
+        background-color: $body-bg;
+    }
+    form label {
+        display: block;
+    }
+
+    form ul {
+        list-style: none;
+    }
+}
