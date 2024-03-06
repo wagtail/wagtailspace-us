@@ -1,0 +1,60 @@
+name: Test & Deploy
+
+# This action will be run on the `master` branch
+# or on any pull requests going into the `master` branch.
+on:
+  push:
+    branches:
+      - master
+  pull_request:
+    branches:
+      - master
+jobs:
+
+  quality-control:
+    name: Quality Control
+    runs-on: ubuntu-latest
+    # Test that Django and the frontend work.
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v4
+      - uses: actions/setup-node@v4
+        with:
+          python-version: 3.8
+          node-version: 14
+      - run: pip install -r requirements.txt
+      - run: python manage.py check
+      - run: python manage.py makemigrations --check
+      - run: npm -g install yarn
+      - run: yarn
+      - run: yarn build
+
+  deploy:
+    name: Deploy to CodeRed Cloud
+    # Only run the deployment if the previous checks succeeded.
+    needs: quality-control
+    # Only run in the master branch (i.e. not pull requests).
+    if: github.ref == 'refs/heads/master'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 14
+      # Build the frontend, since its output is not part of version control.
+      - name: Build frontend
+        run: |
+          npm -g install yarn
+          yarn
+          yarn build
+      # CodeRed Cloud command line tool.
+      # See: https://www.codered.cloud/docs/cli/
+      - name: Install cr tool
+        run: |
+          wget -nv -O /usr/local/bin/cr "https://www.codered.cloud/cli/cr-linux"
+          chmod +x /usr/local/bin/cr
+      # Run the deployment.
+      - name: Deploy
+        run: cr deploy wagtailspace-us
+        env:
+          CR_TOKEN: ${{ secrets.CR_TOKEN }}
