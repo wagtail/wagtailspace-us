@@ -14,6 +14,18 @@ BASE_URL = 'http://localhost:8000'
 
 EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'wagtailspace-us',
+        'USER': 'postgres',
+        'HOST': 'localhost',
+        'PASSWORD': 'postgres',
+    }
+}
+
+SECRET_KEY = 'Not a secret!!!'
+
 LOGGING = {
     'version': 1,
     'disable_existing_loggers': False,
