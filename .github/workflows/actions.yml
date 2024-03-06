@@ -14,21 +14,17 @@ jobs:
   quality-control:
     name: Quality Control
     runs-on: ubuntu-latest
-    # Test that Django works.
+    # Test that Django and the frontend work.
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v4
+      - uses: actions/setup-node@v4
         with:
           python-version: 3.8
+          node-version: 14
       - run: pip install -r requirements.txt
       - run: python manage.py check
       - run: python manage.py makemigrations --check
-    # Test frontend build.
-    steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-node@v4
-        with:
-          node-version: 14
       - run: npm -g install yarn
       - run: yarn
       - run: yarn build
@@ -61,4 +57,4 @@ jobs:
       - name: Deploy
         run: cr deploy wagtailspace-us
         env:
-          CR_TOKEN: ${{ secrets.cr_token }}
+          CR_TOKEN: ${{ secrets.CR_TOKEN }}
