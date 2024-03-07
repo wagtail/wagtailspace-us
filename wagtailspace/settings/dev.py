@@ -36,9 +36,6 @@ LOGGING = {
     }
 }
 
-WEBPACK_LOADER['DEFAULT']['CACHE'] = False
-WEBPACK_LOADER['DEFAULT']['STATS_FILE'] = os.path.join(BASE_DIR, 'config-dev-stats.json')
-
 INTERNAL_IPS = '127.0.0.1'
 
 try:

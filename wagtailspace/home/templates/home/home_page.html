@@ -1,15 +1,14 @@
 {% extends 'base.html' %}
-{% load wagtailcore_tags %}
-{% load render_bundle webpack_static from webpack_loader %}
+{% load wagtailcore_tags static %}
 {% block content %}
-<div class="ufo"><img src="{% webpack_static  'images/wagtail-ufo.svg' %}" alt="UFO" /></div>
-<img src="{% webpack_static 'images/planet1.svg' %}" class="planet planet--earth" />
-<img src="{% webpack_static 'images/planet2.svg' %}" class="planet planet--rings" />
-<img src="{% webpack_static 'images/planet3.svg' %}" class="planet planet--red" />
-<img src="{% webpack_static 'images/planet4.svg' %}" class="planet planet--behindred" />
-<img src="{% webpack_static 'images/rocket.svg' %}" class="rocket" />
-<img src="{% webpack_static 'images/planet5.svg' %}" class="planet planet--blue" />
-<img src="{% webpack_static 'images/planet6.svg' %}" class="planet planet--darkblue" />
+<div class="ufo"><img src="{% static  'images/wagtail-ufo.svg' %}" alt="UFO" /></div>
+<img src="{% static 'images/planet1.svg' %}" class="planet planet--earth" />
+<img src="{% static 'images/planet2.svg' %}" class="planet planet--rings" />
+<img src="{% static 'images/planet3.svg' %}" class="planet planet--red" />
+<img src="{% static 'images/planet4.svg' %}" class="planet planet--behindred" />
+<img src="{% static 'images/rocket.svg' %}" class="rocket" />
+<img src="{% static 'images/planet5.svg' %}" class="planet planet--blue" />
+<img src="{% static 'images/planet6.svg' %}" class="planet planet--darkblue" />
 <header class="header">
     <div class="header__inner">
         <div class="header__center">
@@ -87,7 +86,7 @@
             </div>
             <div class="col-md-6 decoration">
                 <div class="ufo--placeholder" style="position: absolute; top: 200px; left: 10px"></div>
-                <img src="{% webpack_static 'images/ursa-major.svg' %}" class="ursa-major" />
+                <img src="{% static 'images/ursa-major.svg' %}" class="ursa-major" />
             </div>
         </div>
     </section>
@@ -114,7 +113,7 @@
             </div>
             <div class="col-md-6">
                 {{ self.travel_content|richtext }}
-                <img src="{% webpack_static 'images/meteors.svg' %}" class="meteors" />
+                <img src="{% static 'images/meteors.svg' %}" class="meteors" />
             </div>
         </div>
     </section>

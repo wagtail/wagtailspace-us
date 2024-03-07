@@ -10,7 +10,6 @@ BASE_DIR = os.path.dirname(PROJECT_DIR)
 INSTALLED_APPS = [
     'wagtailspace.home',
     'wagtailspace.program',
-    'webpack_loader',
     'crispy_forms',
     'modelcluster',
     'taggit',
@@ -112,16 +111,6 @@ MEDIA_URL = '/media/'
 DEFAULT_AUTO_FIELD = "django.db.models.AutoField"
 
 WAGTAIL_SITE_NAME = "Wagtail Space"
-
-WEBPACK_LOADER = {
-    'DEFAULT': {
-        'CACHE': False,  # Set True in PRD.
-        'BUNDLE_DIR_NAME': '',
-        'POLL_INTERVAL': 0.1,
-        'TIMEOUT': None,
-        'IGNORE': ['.+\.hot-update.js', '.+\.map']
-    }
-}
 
 CRISPY_TEMPLATE_PACK = 'bootstrap4'
 
