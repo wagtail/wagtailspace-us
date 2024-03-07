@@ -1,5 +1,9 @@
 import 'bootstrap/js/dist/modal';
 /* globals $ */
+import jQuery from 'jquery';
+Object.assign(window, { $: jQuery, jQuery });
+
+import '../scss/main.scss'
 
 const getClosest = (positions, currentPos, windowHeight) => {
   // finds the yPos of a placeholder that is closest to the current viewport.

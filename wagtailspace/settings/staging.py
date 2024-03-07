@@ -138,7 +138,3 @@ LOGGING['handlers']['errors_file'] = {
 }
 LOGGING['loggers']['django.request']['handlers'].append('errors_file')
 LOGGING['loggers']['django.security']['handlers'].append('errors_file')
-
-
-WEBPACK_LOADER['DEFAULT']['CACHE'] = not DEBUG
-WEBPACK_LOADER['DEFAULT']['STATS_FILE'] = os.path.join(BASE_DIR, 'config-prd-stats.json')
